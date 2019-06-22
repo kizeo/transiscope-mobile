@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import { MapView, Location, Permissions } from 'expo'
-import { Text, ActivityIndicator } from 'react-native'
+import { Text, ActivityIndicator, View } from 'react-native'
 import { Container } from '../styled'
-import { PinIcon } from './styled'
+import { PinIconFa, UserIcon, PinIconWrapper } from './styled'
+import Categories from '../../data/categories'
+import { withNavigation } from 'react-navigation'
+import Theme from '../../constants/Theme'
 
 class MapScreen extends Component {
   state = {
@@ -16,6 +19,22 @@ class MapScreen extends Component {
       userLocation: { ...userLocation.coords },
     })
     this.fetch()
+  }
+
+  formatedData = data => {
+    return data.map(d => {
+      const cat = Categories.find(c => c.id + '' === d.categories[0] + '')
+
+      return {
+        ...d,
+        category: {
+          id: cat.id,
+          color: cat.color,
+          icon: (cat.icon.split(' ') || ['', '.-.'])[1].replace('fa-', ''),
+          name: cat.name,
+        },
+      }
+    })
   }
 
   getLocationAsync = async () => {
@@ -35,15 +54,16 @@ class MapScreen extends Component {
       'https://transiscope.gogocarto.fr/api/elements/search?text=avignon&limit=20'
     )
     const jsonObj = await rslt.json()
-
+    const formated = this.formatedData(jsonObj.data)
+    // console.log(formated)
     this.setState({
-      data: jsonObj.data,
+      data: formated,
     })
   }
 
   render() {
     const { data, userLocation } = this.state
-    console.log(userLocation)
+    const { navigation } = this.props
     return (
       <Container>
         {userLocation && data.length ? (
@@ -63,19 +83,12 @@ class MapScreen extends Component {
               }}
               title="Moi"
               description="Ma position"
-            />
-            {false &&
-              data.length &&
-              data.map(marker => (
-                <MapView.Marker
-                  coordinate={{
-                    latitude: marker.geo.latitude,
-                    longitude: marker.geo.longitude,
-                  }}
-                  title={marker.name}
-                  description={marker.abstract}
-                />
-              ))}
+            >
+              <PinIconWrapper color="#5492f744">
+                <UserIcon name="ios-radio-button-on" />
+              </PinIconWrapper>
+            </MapView.Marker>
+
             {data.length &&
               data.map(marker => (
                 <MapView.Marker
@@ -85,13 +98,24 @@ class MapScreen extends Component {
                   }}
                   title={marker.name}
                   description={marker.abstract}
+                  onCalloutPress={() => navigation.navigate('MapPinDetail')}
                 >
-                  <PinIcon name="ios-leaf" />
+                  <PinIconWrapper color={marker.category.color}>
+                    <PinIconFa name={marker.category.icon} />
+                  </PinIconWrapper>
                 </MapView.Marker>
               ))}
           </MapView>
         ) : (
-          <ActivityIndicator size="large" color="#0000ff" />
+          <View
+            style={{
+              height: '100%',
+              flexDirection: 'column',
+              justifyContent: 'center',
+            }}
+          >
+            <ActivityIndicator size="large" color={Theme.color.greenDark} />
+          </View>
         )}
       </Container>
     )
@@ -102,4 +126,4 @@ MapScreen.navigationOptions = {
   header: null,
 }
 
-export default MapScreen
+export default withNavigation(MapScreen)
