@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text } from 'react-native'
-import { Container } from './styled'
+import { Container } from '../styled'
 
 export default function HomeScreen() {
   return (

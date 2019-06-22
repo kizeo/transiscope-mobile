@@ -1,0 +1,411 @@
+[
+  {
+    "id": "33",
+    "name": "\u00c9cologie, Alimentation, \u00c9nergie",
+    "color": "#8fce00",
+    "icon": "fas fa-recycle",
+    "subcategories": [
+      {
+        "name": "Sous cat",
+        "displayInMenu": false,
+        "displayInInfoBar": false,
+        "options": [
+          {
+            "id": "3",
+            "name": "Agriculture et alimentation",
+            "parent": "33",
+            "color": "#8fce00",
+            "icon": "fas fa-check-circle",
+            "url": "https://www.resiway.org/categorie/57/s-alimenter",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "26",
+            "name": "Climat et \u00e9nergie",
+            "parent": "33",
+            "color": "#8fce00",
+            "icon": "fas fa-check-circle",
+            "url": "https://www.resiway.org/categorie/29/energie",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "32",
+            "name": "Eau, nature et biodiversit\u00e9",
+            "parent": "33",
+            "color": "#8fce00",
+            "icon": "fas fa-check-circle",
+            "url": "https://www.resiway.org/categorie/22/eau",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "57",
+    "name": "Culture, M\u00e9dias et Lien social",
+    "color": "#c90076",
+    "icon": "fas fa-link",
+    "url": "https://www.resiway.org/categorie/134/societe",
+    "subcategories": [
+      {
+        "name": "Sous cat",
+        "displayInMenu": false,
+        "displayInInfoBar": false,
+        "options": [
+          {
+            "id": "11",
+            "name": "Culture",
+            "parent": "57",
+            "color": "#c90076",
+            "icon": "fas fa-check-circle",
+            "url": "https://www.resiway.org/categorie/151/art-et-culture",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "12",
+            "name": "Espaces de rencontres et de lien social",
+            "parent": "57",
+            "color": "#c90076",
+            "icon": "fas fa-check-circle",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "23",
+            "name": "M\u00e9dias et num\u00e9rique",
+            "parent": "57",
+            "color": "#c90076",
+            "icon": "fas fa-check-circle",
+            "url": "https://www.resiway.org/categorie/139/communiquer",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "58",
+    "name": "bien-\u00eatre physique et personnel",
+    "color": "#6a329f",
+    "icon": "fas fa-heart",
+    "url": "https://www.resiway.org/categorie/87/prendre-soin",
+    "subcategories": [
+      {
+        "name": "sous cat",
+        "displayInMenu": false,
+        "displayInInfoBar": false,
+        "options": [
+          {
+            "id": "20",
+            "name": "Sant\u00e9",
+            "parent": "58",
+            "color": "#6a329f",
+            "icon": "fas fa-check-circle",
+            "url": "https://www.resiway.org/categorie/88/plantes-medicinales",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "60",
+            "name": "personnes \u00e2g\u00e9es",
+            "parent": "58",
+            "color": "#6a329f",
+            "icon": "fas fa-check-circle",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "61",
+            "name": "handicap",
+            "parent": "58",
+            "color": "#6a329f",
+            "icon": "fas fa-check-circle",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "62",
+            "name": "D\u00e9veloppement personnel, bien-\u00eatre",
+            "parent": "58",
+            "color": "#6a329f",
+            "icon": "fas fa-check-circle"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "46",
+    "name": "citoyennet\u00e9, droits, solidarit\u00e9s",
+    "color": "#16537e",
+    "icon": "fas fa-balance-scale",
+    "subcategories": [
+      {
+        "name": "sous cat",
+        "displayInMenu": false,
+        "displayInInfoBar": false,
+        "options": [
+          {
+            "id": "16",
+            "name": "Solidarit\u00e9",
+            "parent": "46",
+            "color": "#16537e",
+            "icon": "fas fa-check-circle",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "18",
+            "name": "Citoyennet\u00e9, droits, inclusion",
+            "parent": "46",
+            "color": "#16537e",
+            "icon": "fas fa-check-circle",
+            "url": "https://www.resiway.org/categorie/200/politique",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "59",
+            "name": "Intelligence collective",
+            "parent": "46",
+            "color": "#16537e",
+            "icon": "fas fa-check-circle",
+            "url": "https://www.resiway.org/categorie/196/intelligence-collective",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "name": "\u00e9ducation, formation",
+    "color": "#2986cc",
+    "icon": "fas fa-university",
+    "url": "https://www.resiway.org/categorie/207/apprendre",
+    "subcategories": [
+      {
+        "name": "Sous cat\u00e9gorie",
+        "displayInMenu": false,
+        "displayInInfoBar": false,
+        "options": [
+          {
+            "id": "7",
+            "name": "Education",
+            "parent": "8",
+            "color": "#2986cc",
+            "icon": "fas fa-check-circle",
+            "url": "https://www.resiway.org/categorie/89/education-et-parentage",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "9",
+            "name": "Sensibilisation",
+            "parent": "8",
+            "color": "#2986cc",
+            "icon": "fas fa-check-circle",
+            "url": "https://www.resiway.org/categorie/201/education-a-l-environnement",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "15",
+            "name": "Formation",
+            "parent": "8",
+            "color": "#2986cc",
+            "icon": "fas fa-check-circle",
+            "url": "https://www.resiway.org/categorie/184/formations",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "19",
+    "name": "Habitat et urbanisme",
+    "color": "#744700",
+    "icon": "fas fa-home",
+    "subcategories": [
+      {
+        "name": "sous cat",
+        "displayInMenu": false,
+        "displayInInfoBar": false,
+        "options": [
+          {
+            "id": "6",
+            "name": "Habitat, logement",
+            "parent": "19",
+            "color": "#744700",
+            "icon": "fas fa-check-circle",
+            "url": "https://www.resiway.org/categorie/1/se-loger",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "36",
+            "name": "Am\u00e9nagements et projets urbains",
+            "parent": "19",
+            "color": "#744700",
+            "icon": "fas fa-check-circle",
+            "url": "https://www.resiway.org/categorie/138/eco-village",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "name": "modes de d\u00e9placements",
+    "color": "#ce7e00",
+    "icon": "fas fa-bicycle",
+    "url": "https://www.resiway.org/categorie/188/se-deplacer"
+  },
+  {
+    "id": "21",
+    "name": "\u00c9conomie Sociale et Solidaire",
+    "color": "#898989",
+    "icon": "fa fa-money",
+    "url": "https://www.resiway.org/categorie/122/economie",
+    "subcategories": [
+      {
+        "name": "sous cat",
+        "displayInMenu": false,
+        "displayInInfoBar": false,
+        "options": [
+          {
+            "id": "10",
+            "name": "Fabriquer, r\u00e9parer, z\u00e9ro d\u00e9chets",
+            "parent": "21",
+            "color": "#898993",
+            "icon": "fas fa-check-circle",
+            "url": "https://www.resiway.org/categorie/224/zero-dechet",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "14",
+            "name": "Syst\u00e8mes d'\u00e9change alternatifs",
+            "parent": "21",
+            "color": "#898992",
+            "icon": "fas fa-check-circle",
+            "url": "https://www.resiway.org/categorie/123/echanges",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "25",
+            "name": "Finance \u00e9thique",
+            "parent": "21",
+            "color": "#898992",
+            "icon": "fas fa-check-circle",
+            "url": "https://www.resiway.org/categorie/240/finance",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "30",
+            "name": "Producteurs, fournisseurs",
+            "parent": "21",
+            "color": "#898990",
+            "icon": "fas fa-check-circle",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "31",
+            "name": "Magasins, commerces",
+            "parent": "21",
+            "color": "#898991",
+            "icon": "fas fa-check-circle",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "63",
+    "name": "Erreurs",
+    "useIconForMarker": false,
+    "useColorForMarker": false,
+    "displayInMenu": false,
+    "displayInInfoBar": false,
+    "displayInForm": false,
+    "displayChildrenInMenu": false,
+    "displayChildrenInInfoBar": false,
+    "displayChildrenInForm": false,
+    "subcategories": [
+      {
+        "name": "sous cat",
+        "isMandatory": false,
+        "displayInMenu": false,
+        "displayInInfoBar": false,
+        "displayInForm": false,
+        "options": [
+          {
+            "id": "27",
+            "name": "Edu",
+            "parent": "63",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "35",
+            "name": "am_pr",
+            "parent": "63",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "42",
+            "name": "solida",
+            "parent": "63",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "51",
+            "name": "en_cl",
+            "parent": "63",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "64",
+            "name": "JSON.parse(`{\"error\":\"no incoming data\"}`).map((item) => item.translatedValue).concat([`CAC`, 'domaine'])",
+            "parent": "63",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "65",
+            "name": "JSON.parse(...).map is not a function",
+            "parent": "63",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          },
+          {
+            "id": "68",
+            "name": "no incoming data",
+            "parent": "63",
+            "useIconForMarker": false,
+            "useColorForMarker": false
+          }
+        ]
+      }
+    ]
+  }
+]
