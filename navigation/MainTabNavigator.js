@@ -8,6 +8,7 @@ import {
 import TabBarIcon from '../components/TabBarIcon'
 import HomeScreen from '../screens/Home'
 import MapScreen from '../screens/Map'
+import FilterScreen from '../screens/Filter'
 import LinksScreen from '../screens/LinksScreen'
 import SettingsScreen from '../screens/SettingsScreen'
 
@@ -30,6 +31,15 @@ MapStack.navigationOptions = {
   tabBarLabel: 'Map',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={'ios-globe'} />
+  ),
+}
+
+const FilterStack = createStackNavigator({ Filter: FilterScreen })
+
+FilterStack.navigationOptions = {
+  tabBarLabel: 'Filter',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={'ios-list'} />
   ),
 }
 
@@ -62,6 +72,7 @@ SettingsStack.navigationOptions = {
 }
 
 export default createBottomTabNavigator({
+  FilterStack,
   HomeStack,
   MapStack,
 })
