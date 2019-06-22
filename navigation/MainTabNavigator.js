@@ -30,6 +30,7 @@ HomeStack.navigationOptions = {
 
 const LinksStack = createStackNavigator({
   Links: LinksScreen,
+  
 });
 
 LinksStack.navigationOptions = {
