@@ -1,5 +1,5 @@
 import React from 'react'
-import { Platform } from 'react-native'
+import { Platform, Text, Image } from 'react-native'
 import {
   createStackNavigator,
   createBottomTabNavigator,
@@ -9,8 +9,12 @@ import TabBarIcon from '../components/TabBarIcon'
 import HomeScreen from '../screens/Home'
 import MapScreen from '../screens/Map'
 import FilterScreen from '../screens/Filter'
+import MapPinDetailScreen from '../screens/Map/Detail'
 import LinksScreen from '../screens/LinksScreen'
 import SettingsScreen from '../screens/SettingsScreen'
+import Theme from '../constants/Theme'
+
+const logoUri = require('../assets/images/transiscope_logo.png')
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -24,7 +28,8 @@ HomeStack.navigationOptions = {
 }
 
 const MapStack = createStackNavigator({
-  Home: MapScreen,
+  Map: MapScreen,
+  MapPinDetail: MapPinDetailScreen,
 })
 
 MapStack.navigationOptions = {
@@ -70,9 +75,24 @@ SettingsStack.navigationOptions = {
     />
   ),
 }
+const appStack = createStackNavigator(
+  {
+    MapStack,
+  },
+  {
+    defaultNavigationOptions: {
+      headerTitle: (
+        <Image source={logoUri} style={{ height: 28 }} resizeMode="contain" />
+      ),
+      headerStyle: {
+        backgroundColor: Theme.color.greenLight,
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    },
+  }
+)
 
-export default createBottomTabNavigator({
-  FilterStack,
-  HomeStack,
-  MapStack,
-})
+export default appStack
