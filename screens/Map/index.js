@@ -4,6 +4,8 @@ import MapView from 'react-native-maps'
 import { ActivityIndicator, View } from 'react-native'
 import { withNavigation } from 'react-navigation'
 
+import SearchBar from './SearchBar'
+
 import { Container } from '../styled'
 import { PinIconFa, UserIcon, PinIconWrapper } from './styled'
 import Categories from '../../data/categories'
@@ -115,45 +117,58 @@ class MapScreen extends Component {
     return (
       <Container>
         {userLocation ? (
-          <MapView
-            style={{ flex: 1 }}
-            initialRegion={{
-              latitude: userLocation.latitude,
-              longitude: userLocation.longitude,
-              latitudeDelta: 0.0422,
-              longitudeDelta: 0.0221,
-            }}
-            onRegionChangeComplete={this.handleRegionChange}
-          >
-            {data.map(marker => (
-              <MapView.Marker
-                key={marker.id}
-                coordinate={{
-                  latitude: marker.geo.latitude,
-                  longitude: marker.geo.longitude,
-                }}
-                title={marker.name}
-                description={marker.abstract}
-                onCalloutPress={() => navigation.navigate('MapPinDetail')}
-              >
-                <PinIconWrapper color={marker.category.color}>
-                  <PinIconFa name={marker.category.icon} />
-                </PinIconWrapper>
-              </MapView.Marker>
-            ))}
-            <MapView.Marker
-              coordinate={{
+          <View style={{ flex: 1, position: 'relative' }}>
+            <MapView
+              style={{ flex: 1 }}
+              initialRegion={{
                 latitude: userLocation.latitude,
                 longitude: userLocation.longitude,
+                latitudeDelta: 0.0422,
+                longitudeDelta: 0.0221,
               }}
-              title="Moi"
-              description="Ma position"
+              onRegionChangeComplete={this.handleRegionChange}
             >
-              <PinIconWrapper color="#5492f744">
-                <UserIcon name="ios-radio-button-on" />
-              </PinIconWrapper>
-            </MapView.Marker>
-          </MapView>
+              {data.map(marker => (
+                <MapView.Marker
+                  key={marker.id}
+                  coordinate={{
+                    latitude: marker.geo.latitude,
+                    longitude: marker.geo.longitude,
+                  }}
+                  title={marker.name}
+                  description={marker.abstract}
+                  onCalloutPress={() => navigation.navigate('MapPinDetail')}
+                >
+                  <PinIconWrapper color={marker.category.color}>
+                    <PinIconFa name={marker.category.icon} />
+                  </PinIconWrapper>
+                </MapView.Marker>
+              ))}
+              <MapView.Marker
+                coordinate={{
+                  latitude: userLocation.latitude,
+                  longitude: userLocation.longitude,
+                }}
+                title="Moi"
+                description="Ma position"
+              >
+                <PinIconWrapper color="#5492f744">
+                  <UserIcon name="ios-radio-button-on" />
+                </PinIconWrapper>
+              </MapView.Marker>
+            </MapView>
+            <View
+              style={{
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                left: 0,
+                padding: 10,
+              }}
+            >
+              <SearchBar />
+            </View>
+          </View>
         ) : (
           <View
             style={{

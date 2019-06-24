@@ -22,9 +22,7 @@ const HomeStack = createStackNavigator({
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={'ios-home'} />
-  ),
+  tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="ios-home" />,
 }
 
 const MapStack = createStackNavigator({
@@ -35,16 +33,7 @@ const MapStack = createStackNavigator({
 MapStack.navigationOptions = {
   tabBarLabel: 'Map',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={'ios-globe'} />
-  ),
-}
-
-const FilterStack = createStackNavigator({ Filter: FilterScreen })
-
-FilterStack.navigationOptions = {
-  tabBarLabel: 'Filter',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={'ios-list'} />
+    <TabBarIcon focused={focused} name="ios-globe" />
   ),
 }
 
@@ -78,6 +67,7 @@ SettingsStack.navigationOptions = {
 const appStack = createStackNavigator(
   {
     MapStack,
+    Filter: FilterScreen,
   },
   {
     defaultNavigationOptions: {
