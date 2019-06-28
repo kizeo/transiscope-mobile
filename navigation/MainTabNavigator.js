@@ -72,7 +72,11 @@ const appStack = createStackNavigator(
   {
     defaultNavigationOptions: {
       headerTitle: (
-        <Image source={logoUri} style={{ height: 28 }} resizeMode="contain" />
+        <Image
+          source={logoUri}
+          style={{ width: '100%', height: 28 }}
+          resizeMode="contain"
+        />
       ),
       headerStyle: {
         backgroundColor: Theme.color.greenLight,
