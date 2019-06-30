@@ -3,7 +3,7 @@ import { View, TextInput, TouchableOpacity } from 'react-native'
 import { withNavigation } from 'react-navigation'
 import { MaterialIcons } from '@expo/vector-icons'
 
-const SearchBar = ({ navigation }) => (
+const SearchBar = ({ navigation, filters, updateFilters }) => (
   <View
     style={{
       flexDirection: 'row',
@@ -25,7 +25,7 @@ const SearchBar = ({ navigation }) => (
     />
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate('Filter')
+        navigation.navigate('Filter', { filters, updateFilters })
       }}
     >
       <MaterialIcons

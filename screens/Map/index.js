@@ -36,6 +36,10 @@ class MapScreen extends Component {
   state = {
     userLocation: undefined,
     data: [],
+    filters: {
+      categories: [],
+      sources: [],
+    },
   }
 
   componentDidMount = async () => {
@@ -47,15 +51,16 @@ class MapScreen extends Component {
     this.fetch(userLocation.coords)
   }
 
-  formatedData = data => {
-    return data.map(d => {
-      const cat = Categories.find(c => c.id + '' === d.categories[0] + '')
+  formatedData = data =>
+    data.map(d => {
+      const cat = Categories.find(c => `${c.id}` === `${d.categories[0]}`)
       const catFinal = cat || {
         id: null,
         color: Theme.color.greenLight,
         icon: 'fa home',
         name: '',
       }
+
       return {
         ...d,
         category: {
@@ -68,7 +73,6 @@ class MapScreen extends Component {
         },
       }
     })
-  }
 
   getLocationAsync = async () => {
     const { status } = await Permissions.askAsync(Permissions.LOCATION)
@@ -101,6 +105,7 @@ class MapScreen extends Component {
 
     const jsonObj = await rslt.json()
     const formated = this.formatedData(jsonObj.data)
+    // console.warn(formated[0].categories)
 
     this.setState({
       data: formated,
@@ -111,8 +116,12 @@ class MapScreen extends Component {
     this.fetch(region)
   }
 
+  updateFilters = filters => {
+    this.setState({ filters })
+  }
+
   render() {
-    const { data, userLocation } = this.state
+    const { data, userLocation, filters } = this.state
     const { navigation } = this.props
     return (
       <Container>
@@ -166,7 +175,7 @@ class MapScreen extends Component {
                 padding: 10,
               }}
             >
-              <SearchBar />
+              <SearchBar updateFilters={this.updateFilters} filters={filters} />
             </View>
           </View>
         ) : (

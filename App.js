@@ -30,8 +30,6 @@ export default function App(props) {
       hideTuto: hideTuto === 'true',
     })
 
-    console.warn(hideTuto)
-
     await AsyncStorage.setItem(TUO_SETTING_KEY, 'true')
   }
 
