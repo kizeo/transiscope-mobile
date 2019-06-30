@@ -132,8 +132,8 @@ class MapScreen extends Component {
                 <MapView.Marker
                   key={marker.id}
                   coordinate={{
-                    latitude: marker.geo.latitude,
-                    longitude: marker.geo.longitude,
+                    latitude: parseFloat(marker.geo.latitude),
+                    longitude: parseFloat(marker.geo.longitude),
                   }}
                   title={marker.name}
                   description={marker.abstract}
