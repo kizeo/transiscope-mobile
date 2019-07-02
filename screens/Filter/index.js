@@ -9,6 +9,7 @@ class Filter extends Component {
     state: 0,
     domaines: [],
     sources: [],
+    filters: this.props.navigation.state.params.filters,
   }
 
   componentDidMount() {
@@ -36,22 +37,64 @@ class Filter extends Component {
     }
   }
 
-  render() {
-    const { state, domaines, sources } = this.state
+  addCategory = category => {
+    const { filters } = this.state
+    this.setState({
+      filters: {
+        ...filters,
+        categories: [...filters.categories, ...category],
+      },
+    })
+  }
 
-    if (state === 1)
+  removeCategory = category => {
+    const { filters } = this.state
+    this.setState({
+      filters: {
+        ...filters,
+        categories: filters.categories.filter(c => !category.includes(c)),
+      },
+    })
+  }
+
+  addSources = sources => {
+    const { filters } = this.state
+    this.setState({
+      filters: {
+        ...filters,
+        sources: [...filters.sources, ...sources],
+      },
+    })
+  }
+
+  removeSources = sources => {
+    const { filters } = this.state
+    this.setState({
+      filters: {
+        ...filters,
+        sources: filters.sources.filter(c => !sources.includes(c)),
+      },
+    })
+  }
+
+  render() {
+    const { state, domaines, sources, filters } = this.state
+
+    if (state === 1) {
       return (
         <View>
           <Text>Loading</Text>
         </View>
       )
+    }
 
-    if (state === -1)
+    if (state === -1) {
       return (
         <View>
           <Text>Error</Text>
         </View>
       )
+    }
 
     return (
       <ScrollView>
@@ -59,13 +102,25 @@ class Filter extends Component {
         {domaines
           .filter(d => d.displayInMenu !== false)
           .map(d => (
-            <Row key={d.id} config={d} />
+            <Row
+              key={d.id}
+              config={d}
+              add={this.addCategory}
+              remove={this.removeCategory}
+              filters={filters.categories}
+            />
           ))}
         <Header title="Sources" />
         {sources
           .filter(d => d.displayInMenu !== false)
           .map(s => (
-            <Row key={s.id} config={s} />
+            <Row
+              key={s.id}
+              config={s}
+              add={this.addSources}
+              remove={this.removeSources}
+              filters={filters.sources}
+            />
           ))}
       </ScrollView>
     )

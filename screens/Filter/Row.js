@@ -6,12 +6,29 @@ import SubCategories from './SubCategories'
 
 import getIcon from './getIcon'
 
-const Row = ({ config }) => {
+const getSubCategoriesId = subCategories => {
+  if (!subCategories) return []
+
+  return subCategories.options.map(o => o.id)
+}
+
+const subCategoriesSelected = (subCategories, cat) => {
+  if (!subCategories) return false
+
+  return cat.some(id => getSubCategoriesId(subCategories).includes(id))
+}
+
+const Row = ({ config, add, remove, filters }) => {
   const icon = getIcon(config)
 
   const subCategories = config.subcategories && config.subcategories[0]
 
   const [display, toggleDisplay] = useState(false)
+
+  const selected =
+    filters.length === 0 ||
+    filters.includes(config.id) ||
+    subCategoriesSelected(subCategories, filters)
 
   return (
     <View>
@@ -20,23 +37,31 @@ const Row = ({ config }) => {
         disabled={!subCategories}
         onPress={() => toggleDisplay(!display)}
       >
-        <View
-          style={{
-            backgroundColor: config.color,
-            width: 60,
-            height: 50,
-            justifyContent: 'center',
-            alignItems: 'center',
+        <TouchableOpacity
+          onPress={() => {
+            const sIds = getSubCategoriesId(subCategories)
+            if (filters.includes(config.id)) remove([config.id, ...sIds])
+            else add([config.id, ...sIds])
           }}
         >
-          {icon && (
-            <FontAwesome
-              size={20}
-              style={{ padding: 10, color: '#fff' }}
-              name={icon}
-            />
-          )}
-        </View>
+          <View
+            style={{
+              backgroundColor: selected ? config.color : '#bcbcbc',
+              width: 60,
+              height: 50,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            {icon && (
+              <FontAwesome
+                size={20}
+                style={{ padding: 10, color: '#fff' }}
+                name={icon}
+              />
+            )}
+          </View>
+        </TouchableOpacity>
         <Text style={{ flex: 1, color: '#175259', marginLeft: 10 }}>
           {config.name}
         </Text>
@@ -49,7 +74,12 @@ const Row = ({ config }) => {
         )}
       </TouchableOpacity>
       {subCategories && display && (
-        <SubCategories subCategories={subCategories} />
+        <SubCategories
+          subCategories={subCategories}
+          add={add}
+          remove={remove}
+          filters={filters}
+        />
       )}
     </View>
   )
