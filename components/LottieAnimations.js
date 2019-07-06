@@ -1,40 +1,37 @@
-import React, { useEffect, useState, Component } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { View, StyleSheet } from 'react-native'
 import { DangerZone } from 'expo'
 const { Lottie } = DangerZone
+const SOURCE = require('../assets/animations/load.json')
 
-const SOURCE = require('../assets/animations/loaderTransiscope.json')
+const LottieAnimations = ({ width, height, source }) => {
+  let animref = useRef(null)
+  useEffect(() => {
+    if (animref && animref.current) animref.current.play()
+  })
 
-export default class LottieAnimations extends Component {
-  componentDidMount() {
-    this.animation.play()
-  }
-
-  render() {
-    const { width, height, source } = this.props
-    return (
-      <View style={styles.animationContainer}>
-        <Lottie
-          ref={animation => {
-            this.animation = animation
-          }}
-          style={{
-            width,
-            height,
-            backgroundColor: '#fff',
-          }}
-          source={source || SOURCE}
-        />
-      </View>
-    )
-  }
+  return (
+    <View
+      style={{
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flex: 1,
+      }}
+    >
+      <Lottie
+        ref={anim => {
+          animref.current = anim
+        }}
+        style={{
+          width,
+          height,
+          backgroundColor: '#fff',
+        }}
+        source={source || SOURCE}
+      />
+    </View>
+  )
 }
 
-const styles = StyleSheet.create({
-  animationContainer: {
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-  },
-})
+export default LottieAnimations
