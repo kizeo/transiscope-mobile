@@ -5,7 +5,7 @@ const { Lottie } = DangerZone
 const SOURCE = require('../assets/animations/loaderTransiscope.json')
 
 const LottieAnimations = ({ width, height, source }) => {
-  let animref = useRef(null)
+  const animref = useRef(null)
   useEffect(() => {
     if (animref && animref.current) animref.current.play()
   }, [])
