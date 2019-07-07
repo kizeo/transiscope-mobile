@@ -2,13 +2,13 @@ import React, { useEffect, useRef, useState } from 'react'
 import { View, StyleSheet } from 'react-native'
 import { DangerZone } from 'expo'
 const { Lottie } = DangerZone
-const SOURCE = require('../assets/animations/load.json')
+const SOURCE = require('../assets/animations/loaderTransiscope.json')
 
 const LottieAnimations = ({ width, height, source }) => {
   let animref = useRef(null)
   useEffect(() => {
     if (animref && animref.current) animref.current.play()
-  })
+  }, [])
 
   return (
     <View
@@ -20,9 +20,7 @@ const LottieAnimations = ({ width, height, source }) => {
       }}
     >
       <Lottie
-        ref={anim => {
-          animref.current = anim
-        }}
+        ref={animref}
         style={{
           width,
           height,

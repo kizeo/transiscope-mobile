@@ -122,7 +122,7 @@
                 },
                 "ix": 2
               },
-              "nm": "Tracé 1",
+              "nm": "Trace 1",
               "mn": "ADBE Vector Shape - Group",
               "hd": false
             },
@@ -195,7 +195,7 @@
                 },
                 "ix": 2
               },
-              "nm": "Tracé 1",
+              "nm": "Trace 1",
               "mn": "ADBE Vector Shape - Group",
               "hd": false
             },
@@ -255,7 +255,7 @@
                 },
                 "ix": 2
               },
-              "nm": "Tracé 1",
+              "nm": "Trace 1",
               "mn": "ADBE Vector Shape - Group",
               "hd": false
             },
@@ -328,7 +328,7 @@
                 },
                 "ix": 2
               },
-              "nm": "Tracé 1",
+              "nm": "Trace 1",
               "mn": "ADBE Vector Shape - Group",
               "hd": false
             },
@@ -400,7 +400,7 @@
                 },
                 "ix": 2
               },
-              "nm": "Tracé 1",
+              "nm": "Trace 1",
               "mn": "ADBE Vector Shape - Group",
               "hd": false
             },
@@ -499,7 +499,7 @@
           "ef": [
             {
               "ty": 3,
-              "nm": "Point d´ancrage",
+              "nm": "Point dancrage",
               "mn": "ADBE Geometry2-0001",
               "ix": 1,
               "v": { "a": 0, "k": [42.5, 42.5], "ix": 1 }
@@ -520,14 +520,14 @@
             },
             {
               "ty": 0,
-              "nm": "Hauteur d´échelle",
+              "nm": "Hauteur dechelle",
               "mn": "ADBE Geometry2-0003",
               "ix": 4,
               "v": { "a": 0, "k": 100, "ix": 4 }
             },
             {
               "ty": 0,
-              "nm": "Largeur d´échelle",
+              "nm": "Largeur dechelle",
               "mn": "ADBE Geometry2-0004",
               "ix": 5,
               "v": { "a": 0, "k": 100, "ix": 5 }
@@ -555,14 +555,14 @@
             },
             {
               "ty": 0,
-              "nm": "Opacité",
+              "nm": "Opacite",
               "mn": "ADBE Geometry2-0008",
               "ix": 9,
               "v": { "a": 0, "k": 100, "ix": 9 }
             },
             {
               "ty": 7,
-              "nm": "Utiliser l´angle obturateur",
+              "nm": "Utiliser langle obturateur",
               "mn": "ADBE Geometry2-0009",
               "ix": 10,
               "v": { "a": 0, "k": 1, "ix": 10 }
@@ -632,7 +632,7 @@
                 },
                 "ix": 2
               },
-              "nm": "Tracé 1",
+              "nm": "Trace 1",
               "mn": "ADBE Vector Shape - Group",
               "hd": false
             },
