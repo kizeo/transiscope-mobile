@@ -3,6 +3,7 @@ import { View, Text, ScrollView } from 'react-native'
 
 import Header from './Header'
 import Row from './Row'
+import LottieAnimations from '../../components/LottieAnimations'
 
 class Filter extends Component {
   state = {
@@ -82,8 +83,13 @@ class Filter extends Component {
 
     if (state === 1) {
       return (
-        <View>
-          <Text>Loading</Text>
+        <View   
+          style={{
+            height: '100%',
+            flexDirection: 'column',
+            justifyContent: 'center',
+          }}>
+          <LottieAnimations width={100} height={100} />
         </View>
       )
     }

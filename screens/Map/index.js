@@ -10,6 +10,7 @@ import { Container } from '../styled'
 import { PinIconFa, UserIcon, PinIconWrapper } from './styled'
 import Categories from '../../data/categories'
 import Theme from '../../constants/Theme'
+import LottieAnimations from '../../components/LottieAnimations'
 
 const geoRange = (coords, radiusInKm) => {
   const { latitude, longitude } = coords
@@ -186,7 +187,7 @@ class MapScreen extends Component {
               justifyContent: 'center',
             }}
           >
-            <ActivityIndicator size="large" color={Theme.color.greenDark} />
+            <LottieAnimations width={100} height={100} />
           </View>
         )}
       </Container>
