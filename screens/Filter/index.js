@@ -1,11 +1,21 @@
 import React, { Component } from 'react'
-import { View, Text, ScrollView } from 'react-native'
+import { View, Text, ScrollView, Button } from 'react-native'
 
 import Header from './Header'
 import Row from './Row'
 import LottieAnimations from '../../components/LottieAnimations'
 
 class Filter extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    headerRight: (
+      <Button
+        onPress={navigation.state.params.update}
+        title="Ok"
+        color="#fff"
+      />
+    ),
+  })
+
   state = {
     state: 0,
     domaines: [],
@@ -15,6 +25,17 @@ class Filter extends Component {
 
   componentDidMount() {
     this.fetchConf()
+    const { navigation } = this.props
+    const { state, setParams } = navigation
+    const { updateFilters } = state.params
+
+    setParams({
+      update: () => {
+        const { filters } = this.state
+        updateFilters(filters)
+        navigation.pop()
+      },
+    })
   }
 
   fetchConf = async () => {
@@ -83,12 +104,13 @@ class Filter extends Component {
 
     if (state === 1) {
       return (
-        <View   
+        <View
           style={{
             height: '100%',
             flexDirection: 'column',
             justifyContent: 'center',
-          }}>
+          }}
+        >
           <LottieAnimations width={100} height={100} />
         </View>
       )
