@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Location, Permissions } from 'expo'
 import MapView from 'react-native-maps'
-import { ActivityIndicator, View } from 'react-native'
+import { View } from 'react-native'
 import { withNavigation } from 'react-navigation'
 
 import SearchBar from './SearchBar'
@@ -123,6 +123,23 @@ class MapScreen extends Component {
 
   render() {
     const { data, userLocation, filters } = this.state
+
+    const { categories } = filters
+
+    const filterdByCategories =
+      categories.length > 0
+        ? data.filter(d =>
+            d.categories.find(c => categories.map(parseInt).includes(c))
+          )
+        : data
+
+    // const filterdBySources =
+    //   sources.length > 0
+    //     ? data.filter(d =>
+    //         d.sources.find(c => sources.map(parseInt).includes(c))
+    //       )
+    //     : data
+
     const { navigation } = this.props
     return (
       <Container>
@@ -138,7 +155,7 @@ class MapScreen extends Component {
               }}
               onRegionChangeComplete={this.handleRegionChange}
             >
-              {data.map(marker => (
+              {filterdByCategories.map(marker => (
                 <MapView.Marker
                   key={marker.id}
                   coordinate={{
