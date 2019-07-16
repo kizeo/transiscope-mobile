@@ -13,8 +13,6 @@ const Slide = ({ text, image }) => {
     )
 }
 
-
-
 const styles = StyleSheet.create({
     image: {
         width: 300,

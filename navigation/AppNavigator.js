@@ -3,9 +3,9 @@ import { createAppContainer } from 'react-navigation'
 import createAnimatedSwitchNavigator from 'react-navigation-animated-switch'
 import { Transition } from 'react-native-reanimated'
 import MainTabNavigator from './MainTabNavigator'
-import Slider from '../screens/HomeTour/slider'
+import HomeTour from '../screens/HomeTour'
 
-export default skipTuto => {
+export default (skipTuto) => {
   const routeConfig = skipTuto
     ? {
       Main: MainTabNavigator,
@@ -13,7 +13,7 @@ export default skipTuto => {
     : {
       // You could add another route here for authentication.
       // Read more at https://reactnavigation.org/docs/en/auth-flow.html
-      HomeTour: Slider,
+      HomeTour,
       Main: MainTabNavigator,
     }
 
