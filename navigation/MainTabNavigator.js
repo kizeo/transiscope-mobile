@@ -1,8 +1,7 @@
 import React from 'react'
-import { Platform, Text, Image } from 'react-native'
+import { Platform, Image } from 'react-native'
 import {
   createStackNavigator,
-  createBottomTabNavigator,
 } from 'react-navigation'
 
 import TabBarIcon from '../components/TabBarIcon'

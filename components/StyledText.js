@@ -1,8 +1,5 @@
-import React from 'react';
-import { Text } from 'react-native';
+/* eslint-disable import/prefer-default-export */
+import React from 'react'
+import { Text } from 'react-native'
 
-export function MonoText(props) {
-  return (
-    <Text {...props} style={[props.style, { fontFamily: 'space-mono' }]} />
-  );
-}
+export const MonoText = (props) => <Text {...props} style={[props.style, { fontFamily: 'space-mono' }]} />

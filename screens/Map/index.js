@@ -49,7 +49,7 @@ class MapScreen extends Component {
 
   formatedData = data => {
     return data.map(d => {
-      const cat = Categories.find(c => c.id + '' === d.categories[0] + '')
+      const cat = Categories.find(c => `${c.id  }` === `${d.categories[0]  }`)
       const catFinal = cat || {
         id: null,
         color: Theme.color.greenLight,
@@ -73,9 +73,9 @@ class MapScreen extends Component {
   getLocationAsync = async () => {
     const { status } = await Permissions.askAsync(Permissions.LOCATION)
     if (status !== 'granted') {
-      this.setState({
-        errorMessage: 'Permission to access location was denied',
-      })
+      // this.setState({
+      //   errorMessage: 'Permission to access location was denied',
+      // })
     }
 
     const location = await Location.getCurrentPositionAsync({})

@@ -1,4 +1,3 @@
-
 const LIMIT = "10"
 const URL = "https://transiscope.gogocarto.fr/api/elements"
 
@@ -21,7 +20,7 @@ export const getElementsByPoints  = async (lat1, lng1, lat2, lng2) => {
   const formData = `bounds=${bounds}&boundsJson=${generateBoundsJson(lat1,lng1,lat2,lng2)}&categories=&fullRepresentation=false&ontology=gogocompact`
   const options = {
     method: 'POST',
-    headers:new Headers({
+    headers: new Headers({
       'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
     }),
     body: formData,
